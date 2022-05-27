@@ -16,3 +16,21 @@ export function getAppointmentsForDay(state, day) {
 }
   return appointments; //returns final array of appointments
 }
+
+export function getInterview(state, interview) {
+  let interviewObj = {};
+
+  if (interview === null) {
+    return null;
+  }
+
+  interviewObj["student"] = interview.student;
+
+  const id = interview.interviewer;
+
+  interviewObj["interviewer"] = state.interviewers[`${id}`]
+
+  console.log(interviewObj);
+  return interviewObj;
+
+}
