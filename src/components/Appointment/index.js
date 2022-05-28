@@ -15,7 +15,6 @@ export default function Appointment (props) {
     props.interview ? SHOW : EMPTY
   );
 
-  const interviewers = [];
 
   return (
     <article className="appointment">
@@ -29,7 +28,7 @@ export default function Appointment (props) {
         onDelete={() => console.log("onDelete")}
       />
     )}
-    {mode === CREATE && <Form interviewers={interviewers} onCancel={() => back(EMPTY)}/>}
+    {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back(EMPTY)}/>}
       
     </article>
   )
