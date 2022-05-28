@@ -30,7 +30,6 @@ export function getInterview(state, interview) {
 
   interviewObj["interviewer"] = state.interviewers[`${id}`]
 
-  console.log(interviewObj);
   return interviewObj;
 
 }
