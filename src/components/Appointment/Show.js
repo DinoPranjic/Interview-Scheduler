@@ -20,7 +20,7 @@ return (
       />
       <img
         className="appointment__actions-button"
-        onClick={props.onDelete}
+        onClick={() => props.onDelete(props.interviewer.id)}
         src="images/trash.png"
         alt="Delete"
       />
