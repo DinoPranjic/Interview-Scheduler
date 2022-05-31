@@ -32,7 +32,7 @@ export default function Application(props) {
     };
 
     return axios.put(`/api/appointments/${id}`, appointment)
-    .then(   
+    .then(() =>   
       setState({
       ...state,
       appointments
@@ -53,7 +53,7 @@ export default function Application(props) {
     };
 
     return axios.delete(`/api/appointments/${id}`)
-    .then(
+    .then(() =>
       setState({
       ...state,
       appointments
