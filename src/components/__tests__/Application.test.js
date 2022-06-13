@@ -2,7 +2,7 @@ import React from "react";
 
 import axios from 'axios';
 
-import { render, cleanup, waitForElement, fireEvent, getByText, prettyDOM, getAllByTestId, getByAltText, getByPlaceholderText, queryByText, within, getByTestId, getByDisplayValue} from "@testing-library/react";
+import { render, cleanup, waitForElement, fireEvent, getByText, prettyDOM, getAllByTestId, getByAltText, getByPlaceholderText, queryByText, within, getByTestId, getByDisplayValue, act} from "@testing-library/react";
 
 import Application from "components/Application";
 
@@ -51,6 +51,7 @@ describe("Application", () => {
     const { container, debug } = render(<Application />);
 
     await waitForElement(() => getByText(container, "Archie Cohen"));
+    console.log(prettyDOM(container))
 
     const appointment = getAllByTestId(container, "appointment").find(
       appointment => queryByText(appointment, "Archie Cohen")
@@ -60,7 +61,7 @@ describe("Application", () => {
 
     expect(getByText(appointment, "Delete this interview?")).toBeInTheDocument();
 
-    fireEvent.click(queryByText(appointment, "Confirm"));
+    act(() => {fireEvent.click(queryByText(appointment, "Confirm")) });
 
     expect(getByText(appointment, "Deleting...")).toBeInTheDocument();
 
