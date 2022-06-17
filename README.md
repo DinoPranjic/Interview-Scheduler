@@ -3,7 +3,7 @@ By Dino Pranjic
 
 Interview scheduler is a simple app designed to book interviews created using React. Users can book and cancel interviews within certain time slots and choose from a selection of interviewers.
 
-##Final Product
+## Final Product
 
 ## Setup
 
