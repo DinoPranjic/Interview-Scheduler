@@ -4,6 +4,14 @@ By Dino Pranjic
 Interview scheduler is a simple app designed to book interviews created using React. Users can book and cancel interviews within certain time slots and choose from a selection of interviewers.
 
 ## Final Product
+!["Homepage"](https://github.com/DinoPranjic/Interview-Scheduler/blob/master/docs/Homepage.png?raw=true)
+The home page lists all interviews for whichever day is currently selected by the user.
+
+!["Appointment Form"](https://github.com/DinoPranjic/Interview-Scheduler/blob/master/docs/Appointment-Form.png?raw=true)
+Users can book interviews and input a student name and select from 5 available interviewers for that day and time slot.
+
+!["Delete Confirmation"](https://github.com/DinoPranjic/Interview-Scheduler/blob/master/docs/Delete-Confirmation.png?raw=true)
+Users are prompted with confirmation bubbles before they choose to delete interviews or status bubbles during the deleting or saving of their interview.
 
 ## Setup
 
