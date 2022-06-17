@@ -33,12 +33,12 @@ export function useApplicationData () {
       "Friday": 4
     }
 
-    return index[day];
+    return index[day]; //returns 0 through 4
 
   }
 
   function bookInterview(id, interview) {
-    const day = dayIndex(state.day);
+    const day = dayIndex(state.day); // index of particular day in days array
 
     const appointment = {
       ...state.appointments[id],
@@ -50,7 +50,7 @@ export function useApplicationData () {
       [id]: appointment
     };
 
-    const days = [...state.days]
+    const days = [...state.days]; //copy of current state days array
 
     days[day].spots -= 1;
 
