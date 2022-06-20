@@ -25,6 +25,12 @@ export default function Appointment (props) {
   );
 
   function save(name, interviewer) {
+    let edit = false;
+
+    if (mode === EDIT) {
+      edit = true; // if editing appointment, spots remaining will stay the same
+    }
+
     transition(SAVING);
 
     const interview = {
@@ -33,7 +39,7 @@ export default function Appointment (props) {
     };
 
 
-    props.bookInterview(props.id, interview).then(() => transition(SHOW))
+    props.bookInterview(props.id, interview, edit).then(() => transition(SHOW))
     .catch(err => transition(ERROR_SAVE, true));
 
   }

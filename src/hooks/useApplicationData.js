@@ -37,7 +37,7 @@ export function useApplicationData () {
 
   }
 
-  function bookInterview(id, interview) {
+  function bookInterview(id, interview, edit = false) {
     const day = dayIndex(state.day); // index of particular day in days array
 
     const appointment = {
@@ -51,8 +51,10 @@ export function useApplicationData () {
     };
 
     const days = [...state.days]; //copy of current state days array
-
+    
+    if (!edit) {
     days[day].spots -= 1;
+    }
 
     return axios.put(`/api/appointments/${id}`, appointment)
     .then(() =>   
